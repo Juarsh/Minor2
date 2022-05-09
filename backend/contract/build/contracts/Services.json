@@ -1,0 +1,1631 @@
+{
+  "contractName": "Services",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_startTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_endTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_userID",
+          "type": "string"
+        }
+      ],
+      "name": "addService",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_userID",
+          "type": "string"
+        }
+      ],
+      "name": "getService",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "startTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "endTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "userID",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct Services.service",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_startTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_endTime\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_userID\",\"type\":\"string\"}],\"name\":\"addService\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_userID\",\"type\":\"string\"}],\"name\":\"getService\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"startTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"endTime\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"userID\",\"type\":\"string\"}],\"internalType\":\"struct Services.service\",\"name\":\"\",\"type\":\"tuple\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/services.sol\":\"Services\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/services.sol\":{\"keccak256\":\"0x79c4023fb20e7aba0d947e01d0f23c95cb16600d1ff936d043419e93fc477870\",\"urls\":[\"bzz-raw://3e0821ef0f0ec0e2571b11995eef07d6bf7b35bfb45701cdad53ef02fe44b64c\",\"dweb:/ipfs/QmcwZeMoSnjokQdRXfex5JeN4cPGAsdHXNufhG9upz2gPx\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061060e806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063794758be1461003b5780638b41a3901461006b575b600080fd5b61005560048036036100509190810190610322565b610087565b60405161006291906104aa565b60405180910390f35b61008560048036036100809190810190610363565b610175565b005b61008f6101f3565b60008260405161009f9190610493565b90815260200160405180910390206040518060600160405290816000820154815260200160018201548152602001600282018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101655780601f1061013a57610100808354040283529160200191610165565b820191906000526020600020905b81548152906001019060200180831161014857829003601f168201915b5050505050815250509050919050565b61017d6101f3565b8381600001818152505082816020018181525050818160400181905250806000836040516101ab9190610493565b9081526020016040518091039020600082015181600001556020820151816001015560408201518160020190805190602001906101e9929190610214565b5090505050505050565b60405180606001604052806000815260200160008152602001606081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061025557805160ff1916838001178555610283565b82800160010185558215610283579182015b82811115610282578251825591602001919060010190610267565b5b5090506102909190610294565b5090565b6102b691905b808211156102b257600081600090555060010161029a565b5090565b90565b600082601f8301126102ca57600080fd5b81356102dd6102d8826104f9565b6104cc565b915080825260208301602083018583830111156102f957600080fd5b610304838284610561565b50505092915050565b60008135905061031c816105b4565b92915050565b60006020828403121561033457600080fd5b600082013567ffffffffffffffff81111561034e57600080fd5b61035a848285016102b9565b91505092915050565b60008060006060848603121561037857600080fd5b60006103868682870161030d565b93505060206103978682870161030d565b925050604084013567ffffffffffffffff8111156103b457600080fd5b6103c0868287016102b9565b9150509250925092565b60006103d582610530565b6103df818561054c565b93506103ef818560208601610570565b80840191505092915050565b600061040682610525565b610410818561053b565b9350610420818560208601610570565b610429816105a3565b840191505092915050565b600060608301600083015161044c6000860182610484565b50602083015161045f6020860182610484565b506040830151848203604086015261047782826103fb565b9150508091505092915050565b61048d81610557565b82525050565b600061049f82846103ca565b915081905092915050565b600060208201905081810360008301526104c48184610434565b905092915050565b6000604051905081810181811067ffffffffffffffff821117156104ef57600080fd5b8060405250919050565b600067ffffffffffffffff82111561051057600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600081519050919050565b600082825260208201905092915050565b600081905092915050565b6000819050919050565b82818337600083830152505050565b60005b8381101561058e578082015181840152602081019050610573565b8381111561059d576000848401525b50505050565b6000601f19601f8301169050919050565b6105bd81610557565b81146105c857600080fd5b5056fea365627a7a72315820c0732bf70e840a451519c77ca3328866feca5eb76bb8067e78f962c7b1ff4f0d6c6578706572696d656e74616cf564736f6c63430005100040",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063794758be1461003b5780638b41a3901461006b575b600080fd5b61005560048036036100509190810190610322565b610087565b60405161006291906104aa565b60405180910390f35b61008560048036036100809190810190610363565b610175565b005b61008f6101f3565b60008260405161009f9190610493565b90815260200160405180910390206040518060600160405290816000820154815260200160018201548152602001600282018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101655780601f1061013a57610100808354040283529160200191610165565b820191906000526020600020905b81548152906001019060200180831161014857829003601f168201915b5050505050815250509050919050565b61017d6101f3565b8381600001818152505082816020018181525050818160400181905250806000836040516101ab9190610493565b9081526020016040518091039020600082015181600001556020820151816001015560408201518160020190805190602001906101e9929190610214565b5090505050505050565b60405180606001604052806000815260200160008152602001606081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061025557805160ff1916838001178555610283565b82800160010185558215610283579182015b82811115610282578251825591602001919060010190610267565b5b5090506102909190610294565b5090565b6102b691905b808211156102b257600081600090555060010161029a565b5090565b90565b600082601f8301126102ca57600080fd5b81356102dd6102d8826104f9565b6104cc565b915080825260208301602083018583830111156102f957600080fd5b610304838284610561565b50505092915050565b60008135905061031c816105b4565b92915050565b60006020828403121561033457600080fd5b600082013567ffffffffffffffff81111561034e57600080fd5b61035a848285016102b9565b91505092915050565b60008060006060848603121561037857600080fd5b60006103868682870161030d565b93505060206103978682870161030d565b925050604084013567ffffffffffffffff8111156103b457600080fd5b6103c0868287016102b9565b9150509250925092565b60006103d582610530565b6103df818561054c565b93506103ef818560208601610570565b80840191505092915050565b600061040682610525565b610410818561053b565b9350610420818560208601610570565b610429816105a3565b840191505092915050565b600060608301600083015161044c6000860182610484565b50602083015161045f6020860182610484565b506040830151848203604086015261047782826103fb565b9150508091505092915050565b61048d81610557565b82525050565b600061049f82846103ca565b915081905092915050565b600060208201905081810360008301526104c48184610434565b905092915050565b6000604051905081810181811067ffffffffffffffff821117156104ef57600080fd5b8060405250919050565b600067ffffffffffffffff82111561051057600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600081519050919050565b600082825260208201905092915050565b600081905092915050565b6000819050919050565b82818337600083830152505050565b60005b8381101561058e578082015181840152602081019050610573565b8381111561059d576000848401525b50505050565b6000601f19601f8301169050919050565b6105bd81610557565b81146105c857600080fd5b5056fea365627a7a72315820c0732bf70e840a451519c77ca3328866feca5eb76bb8067e78f962c7b1ff4f0d6c6578706572696d656e74616cf564736f6c63430005100040",
+  "sourceMap": "106:564:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;106:564:1;;;;;;;",
+  "deployedSourceMap": "106:564:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;106:564:1;;;;;;;;;;;;;;;;;;;;;;;;544:123;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;285:251;;;;;;;;;;;;;;;;:::i;:::-;;544:123;607:14;;:::i;:::-;640:10;651:7;640:19;;;;;;;;;;;;;;;;;;;;633:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;544:123;;;:::o;285:251::-;383:16;;:::i;:::-;424:10;410:1;:11;;:24;;;;;457:8;445:1;:9;;:20;;;;;487:7;476:1;:8;;:18;;;;527:1;505:10;516:7;505:19;;;;;;;;;;;;;;;;;;;;:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;285:251;;;;:::o;106:564::-;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;6:442:-1:-;;108:3;101:4;93:6;89:17;85:27;75:2;;126:1;123;116:12;75:2;163:6;150:20;185:65;200:49;242:6;200:49;;;185:65;;;176:74;;270:6;263:5;256:21;306:4;298:6;294:17;339:4;332:5;328:16;374:3;365:6;360:3;356:16;353:25;350:2;;;391:1;388;381:12;350:2;401:41;435:6;430:3;425;401:41;;;68:380;;;;;;;;456:130;;536:6;523:20;514:29;;548:33;575:5;548:33;;;508:78;;;;;593:347;;707:2;695:9;686:7;682:23;678:32;675:2;;;723:1;720;713:12;675:2;786:1;775:9;771:17;758:31;809:18;801:6;798:30;795:2;;;841:1;838;831:12;795:2;861:63;916:7;907:6;896:9;892:22;861:63;;;851:73;;737:193;669:271;;;;;947:597;;;;1095:2;1083:9;1074:7;1070:23;1066:32;1063:2;;;1111:1;1108;1101:12;1063:2;1146:1;1163:53;1208:7;1199:6;1188:9;1184:22;1163:53;;;1153:63;;1125:97;1253:2;1271:53;1316:7;1307:6;1296:9;1292:22;1271:53;;;1261:63;;1232:98;1389:2;1378:9;1374:18;1361:32;1413:18;1405:6;1402:30;1399:2;;;1445:1;1442;1435:12;1399:2;1465:63;1520:7;1511:6;1500:9;1496:22;1465:63;;;1455:73;;1340:194;1057:487;;;;;;1551:360;;1681:39;1714:5;1681:39;;;1732:89;1814:6;1809:3;1732:89;;;1725:96;;1826:52;1871:6;1866:3;1859:4;1852:5;1848:16;1826:52;;;1899:6;1894:3;1890:16;1883:23;;1661:250;;;;;;1918:319;;2016:35;2045:5;2016:35;;;2063:61;2117:6;2112:3;2063:61;;;2056:68;;2129:52;2174:6;2169:3;2162:4;2155:5;2151:16;2129:52;;;2202:29;2224:6;2202:29;;;2197:3;2193:39;2186:46;;1996:241;;;;;;2301:727;;2448:4;2443:3;2439:14;2536:4;2529:5;2525:16;2519:23;2548:63;2605:4;2600:3;2596:14;2582:12;2548:63;;;2468:149;2693:4;2686:5;2682:16;2676:23;2705:63;2762:4;2757:3;2753:14;2739:12;2705:63;;;2627:147;2849:4;2842:5;2838:16;2832:23;2901:3;2895:4;2891:14;2884:4;2879:3;2875:14;2868:38;2921:69;2985:4;2971:12;2921:69;;;2913:77;;2784:218;3019:4;3012:11;;2421:607;;;;;;3035:103;3108:24;3126:5;3108:24;;;3103:3;3096:37;3090:48;;;3145:266;;3291:95;3382:3;3373:6;3291:95;;;3284:102;;3403:3;3396:10;;3272:139;;;;;3418:353;;3582:2;3571:9;3567:18;3559:26;;3632:9;3626:4;3622:20;3618:1;3607:9;3603:17;3596:47;3657:104;3756:4;3747:6;3657:104;;;3649:112;;3553:218;;;;;3778:256;;3840:2;3834:9;3824:19;;3878:4;3870:6;3866:17;3977:6;3965:10;3962:22;3941:18;3929:10;3926:34;3923:62;3920:2;;;3998:1;3995;3988:12;3920:2;4018:10;4014:2;4007:22;3818:216;;;;;4041:322;;4185:18;4177:6;4174:30;4171:2;;;4217:1;4214;4207:12;4171:2;4284:4;4280:9;4273:4;4265:6;4261:17;4257:33;4249:41;;4348:4;4342;4338:15;4330:23;;4108:255;;;;4370:118;;4460:5;4454:12;4444:22;;4425:63;;;;4495:122;;4589:5;4583:12;4573:22;;4554:63;;;;4625:153;;4730:6;4725:3;4718:19;4767:4;4762:3;4758:14;4743:29;;4711:67;;;;;4787:145;;4923:3;4908:18;;4901:31;;;;;4940:72;;5002:5;4991:16;;4985:27;;;;5020:145;5101:6;5096:3;5091;5078:30;5157:1;5148:6;5143:3;5139:16;5132:27;5071:94;;;;5174:268;5239:1;5246:101;5260:6;5257:1;5254:13;5246:101;;;5336:1;5331:3;5327:11;5321:18;5317:1;5312:3;5308:11;5301:39;5282:2;5279:1;5275:10;5270:15;;5246:101;;;5362:6;5359:1;5356:13;5353:2;;;5427:1;5418:6;5413:3;5409:16;5402:27;5353:2;5223:219;;;;;5450:97;;5538:2;5534:7;5529:2;5522:5;5518:14;5514:28;5504:38;;5498:49;;;;5555:117;5624:24;5642:5;5624:24;;;5617:5;5614:35;5604:2;;5663:1;5660;5653:12;5604:2;5598:74;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.9.0;\r\npragma experimental ABIEncoderV2;\r\n\r\n\r\ncontract Services {\r\n    struct service { \r\n        uint256 startTime;\r\n        uint256 endTime;\r\n        string userID;\r\n    }\r\n    mapping(string => service) serviceMap;\r\n\r\n    function addService(uint256 _startTime, uint256 _endTime,string memory _userID) public {\r\n        service memory s;\r\n        s.startTime = _startTime;\r\n        s.endTime = _endTime;\r\n        s.userID = _userID;\r\n        serviceMap[_userID] = s;\r\n    }\r\n\r\n    function getService(string memory _userID) public view returns(service memory){\r\n        return serviceMap[_userID];\r\n    }\r\n}",
+  "sourcePath": "D:\\Codes\\Minor 2\\backend\\contract\\contracts\\services.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/services.sol",
+    "exportedSymbols": {
+      "Services": [
+        96
+      ]
+    },
+    "id": 97,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 34,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:32:1"
+      },
+      {
+        "id": 35,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "67:33:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 96,
+        "linearizedBaseContracts": [
+          96
+        ],
+        "name": "Services",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Services.service",
+            "id": 42,
+            "members": [
+              {
+                "constant": false,
+                "id": 37,
+                "name": "startTime",
+                "nodeType": "VariableDeclaration",
+                "scope": 42,
+                "src": "158:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 36,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "158:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 39,
+                "name": "endTime",
+                "nodeType": "VariableDeclaration",
+                "scope": 42,
+                "src": "186:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 38,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "186:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41,
+                "name": "userID",
+                "nodeType": "VariableDeclaration",
+                "scope": 42,
+                "src": "212:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 40,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "212:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "service",
+            "nodeType": "StructDefinition",
+            "scope": 96,
+            "src": "131:102:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 46,
+            "name": "serviceMap",
+            "nodeType": "VariableDeclaration",
+            "scope": 96,
+            "src": "239:37:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_service_$42_storage_$",
+              "typeString": "mapping(string => struct Services.service)"
+            },
+            "typeName": {
+              "id": 45,
+              "keyType": {
+                "id": 43,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "247:6:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "239:26:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_service_$42_storage_$",
+                "typeString": "mapping(string => struct Services.service)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 44,
+                "name": "service",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 42,
+                "src": "257:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_service_$42_storage_ptr",
+                  "typeString": "struct Services.service"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 82,
+              "nodeType": "Block",
+              "src": "372:164:1",
+              "statements": [
+                {
+                  "assignments": [
+                    56
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 56,
+                      "name": "s",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 82,
+                      "src": "383:16:1",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_service_$42_memory_ptr",
+                        "typeString": "struct Services.service"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 55,
+                        "name": "service",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 42,
+                        "src": "383:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_service_$42_storage_ptr",
+                          "typeString": "struct Services.service"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 57,
+                  "initialValue": null,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "383:16:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 62,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 58,
+                        "name": "s",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 56,
+                        "src": "410:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_service_$42_memory_ptr",
+                          "typeString": "struct Services.service memory"
+                        }
+                      },
+                      "id": 60,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "startTime",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 37,
+                      "src": "410:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 61,
+                      "name": "_startTime",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 48,
+                      "src": "424:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "410:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 63,
+                  "nodeType": "ExpressionStatement",
+                  "src": "410:24:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 68,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 64,
+                        "name": "s",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 56,
+                        "src": "445:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_service_$42_memory_ptr",
+                          "typeString": "struct Services.service memory"
+                        }
+                      },
+                      "id": 66,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "endTime",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 39,
+                      "src": "445:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 67,
+                      "name": "_endTime",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 50,
+                      "src": "457:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "445:20:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 69,
+                  "nodeType": "ExpressionStatement",
+                  "src": "445:20:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 74,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 70,
+                        "name": "s",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 56,
+                        "src": "476:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_service_$42_memory_ptr",
+                          "typeString": "struct Services.service memory"
+                        }
+                      },
+                      "id": 72,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "userID",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 41,
+                      "src": "476:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 73,
+                      "name": "_userID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 52,
+                      "src": "487:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "476:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "id": 75,
+                  "nodeType": "ExpressionStatement",
+                  "src": "476:18:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 80,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 76,
+                        "name": "serviceMap",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 46,
+                        "src": "505:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_service_$42_storage_$",
+                          "typeString": "mapping(string memory => struct Services.service storage ref)"
+                        }
+                      },
+                      "id": 78,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 77,
+                        "name": "_userID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 52,
+                        "src": "516:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "505:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_service_$42_storage",
+                        "typeString": "struct Services.service storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 79,
+                      "name": "s",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 56,
+                      "src": "527:1:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_service_$42_memory_ptr",
+                        "typeString": "struct Services.service memory"
+                      }
+                    },
+                    "src": "505:23:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_service_$42_storage",
+                      "typeString": "struct Services.service storage ref"
+                    }
+                  },
+                  "id": 81,
+                  "nodeType": "ExpressionStatement",
+                  "src": "505:23:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 83,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addService",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 53,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 48,
+                  "name": "_startTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 83,
+                  "src": "305:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 47,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "305:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 50,
+                  "name": "_endTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 83,
+                  "src": "325:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 49,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "325:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52,
+                  "name": "_userID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 83,
+                  "src": "342:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 51,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "342:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "304:60:1"
+            },
+            "returnParameters": {
+              "id": 54,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "372:0:1"
+            },
+            "scope": 96,
+            "src": "285:251:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 94,
+              "nodeType": "Block",
+              "src": "622:45:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 90,
+                      "name": "serviceMap",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 46,
+                      "src": "640:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_service_$42_storage_$",
+                        "typeString": "mapping(string memory => struct Services.service storage ref)"
+                      }
+                    },
+                    "id": 92,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 91,
+                      "name": "_userID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 85,
+                      "src": "651:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "640:19:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_service_$42_storage",
+                      "typeString": "struct Services.service storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 89,
+                  "id": 93,
+                  "nodeType": "Return",
+                  "src": "633:26:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 95,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getService",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 86,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 85,
+                  "name": "_userID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 95,
+                  "src": "564:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 84,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "564:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "563:23:1"
+            },
+            "returnParameters": {
+              "id": 89,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 88,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 95,
+                  "src": "607:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_service_$42_memory_ptr",
+                    "typeString": "struct Services.service"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 87,
+                    "name": "service",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 42,
+                    "src": "607:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_service_$42_storage_ptr",
+                      "typeString": "struct Services.service"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "606:16:1"
+            },
+            "scope": 96,
+            "src": "544:123:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 97,
+        "src": "106:564:1"
+      }
+    ],
+    "src": "33:637:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/services.sol",
+      "exportedSymbols": {
+        "Services": [
+          96
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 34,
+        "name": "PragmaDirective",
+        "src": "33:32:1"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 35,
+        "name": "PragmaDirective",
+        "src": "67:33:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            96
+          ],
+          "name": "Services",
+          "scope": 97
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "Services.service",
+              "name": "service",
+              "scope": 96,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "startTime",
+                  "scope": 42,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 36,
+                    "name": "ElementaryTypeName",
+                    "src": "158:7:1"
+                  }
+                ],
+                "id": 37,
+                "name": "VariableDeclaration",
+                "src": "158:17:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "endTime",
+                  "scope": 42,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 38,
+                    "name": "ElementaryTypeName",
+                    "src": "186:7:1"
+                  }
+                ],
+                "id": 39,
+                "name": "VariableDeclaration",
+                "src": "186:15:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "userID",
+                  "scope": 42,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 40,
+                    "name": "ElementaryTypeName",
+                    "src": "212:6:1"
+                  }
+                ],
+                "id": 41,
+                "name": "VariableDeclaration",
+                "src": "212:13:1"
+              }
+            ],
+            "id": 42,
+            "name": "StructDefinition",
+            "src": "131:102:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "serviceMap",
+              "scope": 96,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(string => struct Services.service)",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(string => struct Services.service)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 43,
+                    "name": "ElementaryTypeName",
+                    "src": "247:6:1"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "service",
+                      "referencedDeclaration": 42,
+                      "type": "struct Services.service"
+                    },
+                    "id": 44,
+                    "name": "UserDefinedTypeName",
+                    "src": "257:7:1"
+                  }
+                ],
+                "id": 45,
+                "name": "Mapping",
+                "src": "239:26:1"
+              }
+            ],
+            "id": 46,
+            "name": "VariableDeclaration",
+            "src": "239:37:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "addService",
+              "scope": 96,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_startTime",
+                      "scope": 83,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 47,
+                        "name": "ElementaryTypeName",
+                        "src": "305:7:1"
+                      }
+                    ],
+                    "id": 48,
+                    "name": "VariableDeclaration",
+                    "src": "305:18:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_endTime",
+                      "scope": 83,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 49,
+                        "name": "ElementaryTypeName",
+                        "src": "325:7:1"
+                      }
+                    ],
+                    "id": 50,
+                    "name": "VariableDeclaration",
+                    "src": "325:16:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_userID",
+                      "scope": 83,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 51,
+                        "name": "ElementaryTypeName",
+                        "src": "342:6:1"
+                      }
+                    ],
+                    "id": 52,
+                    "name": "VariableDeclaration",
+                    "src": "342:21:1"
+                  }
+                ],
+                "id": 53,
+                "name": "ParameterList",
+                "src": "304:60:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 54,
+                "name": "ParameterList",
+                "src": "372:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        56
+                      ],
+                      "initialValue": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "s",
+                          "scope": 82,
+                          "stateVariable": false,
+                          "storageLocation": "memory",
+                          "type": "struct Services.service",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "service",
+                              "referencedDeclaration": 42,
+                              "type": "struct Services.service"
+                            },
+                            "id": 55,
+                            "name": "UserDefinedTypeName",
+                            "src": "383:7:1"
+                          }
+                        ],
+                        "id": 56,
+                        "name": "VariableDeclaration",
+                        "src": "383:16:1"
+                      }
+                    ],
+                    "id": 57,
+                    "name": "VariableDeclarationStatement",
+                    "src": "383:16:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "startTime",
+                              "referencedDeclaration": 37,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 56,
+                                  "type": "struct Services.service memory",
+                                  "value": "s"
+                                },
+                                "id": 58,
+                                "name": "Identifier",
+                                "src": "410:1:1"
+                              }
+                            ],
+                            "id": 60,
+                            "name": "MemberAccess",
+                            "src": "410:11:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 48,
+                              "type": "uint256",
+                              "value": "_startTime"
+                            },
+                            "id": 61,
+                            "name": "Identifier",
+                            "src": "424:10:1"
+                          }
+                        ],
+                        "id": 62,
+                        "name": "Assignment",
+                        "src": "410:24:1"
+                      }
+                    ],
+                    "id": 63,
+                    "name": "ExpressionStatement",
+                    "src": "410:24:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "endTime",
+                              "referencedDeclaration": 39,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 56,
+                                  "type": "struct Services.service memory",
+                                  "value": "s"
+                                },
+                                "id": 64,
+                                "name": "Identifier",
+                                "src": "445:1:1"
+                              }
+                            ],
+                            "id": 66,
+                            "name": "MemberAccess",
+                            "src": "445:9:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 50,
+                              "type": "uint256",
+                              "value": "_endTime"
+                            },
+                            "id": 67,
+                            "name": "Identifier",
+                            "src": "457:8:1"
+                          }
+                        ],
+                        "id": 68,
+                        "name": "Assignment",
+                        "src": "445:20:1"
+                      }
+                    ],
+                    "id": 69,
+                    "name": "ExpressionStatement",
+                    "src": "445:20:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string memory"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "userID",
+                              "referencedDeclaration": 41,
+                              "type": "string memory"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 56,
+                                  "type": "struct Services.service memory",
+                                  "value": "s"
+                                },
+                                "id": 70,
+                                "name": "Identifier",
+                                "src": "476:1:1"
+                              }
+                            ],
+                            "id": 72,
+                            "name": "MemberAccess",
+                            "src": "476:8:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 52,
+                              "type": "string memory",
+                              "value": "_userID"
+                            },
+                            "id": 73,
+                            "name": "Identifier",
+                            "src": "487:7:1"
+                          }
+                        ],
+                        "id": 74,
+                        "name": "Assignment",
+                        "src": "476:18:1"
+                      }
+                    ],
+                    "id": 75,
+                    "name": "ExpressionStatement",
+                    "src": "476:18:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct Services.service storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "struct Services.service storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 46,
+                                  "type": "mapping(string memory => struct Services.service storage ref)",
+                                  "value": "serviceMap"
+                                },
+                                "id": 76,
+                                "name": "Identifier",
+                                "src": "505:10:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 52,
+                                  "type": "string memory",
+                                  "value": "_userID"
+                                },
+                                "id": 77,
+                                "name": "Identifier",
+                                "src": "516:7:1"
+                              }
+                            ],
+                            "id": 78,
+                            "name": "IndexAccess",
+                            "src": "505:19:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 56,
+                              "type": "struct Services.service memory",
+                              "value": "s"
+                            },
+                            "id": 79,
+                            "name": "Identifier",
+                            "src": "527:1:1"
+                          }
+                        ],
+                        "id": 80,
+                        "name": "Assignment",
+                        "src": "505:23:1"
+                      }
+                    ],
+                    "id": 81,
+                    "name": "ExpressionStatement",
+                    "src": "505:23:1"
+                  }
+                ],
+                "id": 82,
+                "name": "Block",
+                "src": "372:164:1"
+              }
+            ],
+            "id": 83,
+            "name": "FunctionDefinition",
+            "src": "285:251:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getService",
+              "scope": 96,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_userID",
+                      "scope": 95,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 84,
+                        "name": "ElementaryTypeName",
+                        "src": "564:6:1"
+                      }
+                    ],
+                    "id": 85,
+                    "name": "VariableDeclaration",
+                    "src": "564:21:1"
+                  }
+                ],
+                "id": 86,
+                "name": "ParameterList",
+                "src": "563:23:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 95,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct Services.service",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "service",
+                          "referencedDeclaration": 42,
+                          "type": "struct Services.service"
+                        },
+                        "id": 87,
+                        "name": "UserDefinedTypeName",
+                        "src": "607:7:1"
+                      }
+                    ],
+                    "id": 88,
+                    "name": "VariableDeclaration",
+                    "src": "607:14:1"
+                  }
+                ],
+                "id": 89,
+                "name": "ParameterList",
+                "src": "606:16:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 89
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "struct Services.service storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 46,
+                              "type": "mapping(string memory => struct Services.service storage ref)",
+                              "value": "serviceMap"
+                            },
+                            "id": 90,
+                            "name": "Identifier",
+                            "src": "640:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 85,
+                              "type": "string memory",
+                              "value": "_userID"
+                            },
+                            "id": 91,
+                            "name": "Identifier",
+                            "src": "651:7:1"
+                          }
+                        ],
+                        "id": 92,
+                        "name": "IndexAccess",
+                        "src": "640:19:1"
+                      }
+                    ],
+                    "id": 93,
+                    "name": "Return",
+                    "src": "633:26:1"
+                  }
+                ],
+                "id": 94,
+                "name": "Block",
+                "src": "622:45:1"
+              }
+            ],
+            "id": 95,
+            "name": "FunctionDefinition",
+            "src": "544:123:1"
+          }
+        ],
+        "id": 96,
+        "name": "ContractDefinition",
+        "src": "106:564:1"
+      }
+    ],
+    "id": 97,
+    "name": "SourceUnit",
+    "src": "33:637:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x19be2dDad45f2533866Beb8EDc08cCEf9D21F0Ce",
+      "transactionHash": "0x5237e8da438f3abf7a3ffa54f07492fd0e754e45ac2d2ae1745710c9d0cfec7b"
+    }
+  },
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-08T18:09:40.884Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

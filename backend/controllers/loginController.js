@@ -13,12 +13,12 @@ const login = async (req, res) => {
                     user: ans
                 })
             });
-        }
-        else
+        } else {
             res.send({
                 found: false,
                 message: "User does not exist"
-            })
+            });
+        }
     }).catch((err) => {
         console.log(err);
         res.send({

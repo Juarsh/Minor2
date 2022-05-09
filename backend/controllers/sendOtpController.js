@@ -3,6 +3,7 @@ const { generateOTP } = require("../utils");
 
 const sendOTPController = (req, res) => {
   const { phoneNumber } = req.body;
+  console.log(phoneNumber)
   const otp = generateOTP();
   sendSMS(phoneNumber, otp)
     .then((msg) => {

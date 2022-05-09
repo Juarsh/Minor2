@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import CardComponent from "../../Components/Card/Card";
 import Menubar from "../../Components/Menubar/Menubar";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { isExpired, decodeToken } from "react-jwt";
+import { init } from '../../Web3Client/Web3Client';
 
 const HomePage = (props) => {
 
@@ -13,6 +15,26 @@ const HomePage = (props) => {
         useService2Clicked : false,
         allGroupsWhereUserAdmin: []
     });
+
+    useEffect(() => {
+        let s = window.location.href;
+        if(s.indexOf("?") !== -1) {
+            const token = s.split("?")[1];
+            const decoded = decodeToken(token.substring(0, token.length - 1));
+            console.log("decoded", decoded);
+            //set user
+            if(localStorage.getItem("email") === null && isExpired(token.substring(0, token.length - 1))) {
+                window.location.pathname = "/";
+            }
+        } else {
+            if(localStorage.getItem("email") === null) {
+                window.location.pathname = "/";
+            }
+        }
+        if(localStorage.getItem("metamaskId") === null) {
+            init();
+        }
+    }, []);
 
     const useService1 = () => {
 

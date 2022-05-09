@@ -21,7 +21,7 @@ router.get('/auth/google/callback',
   }
 );
 
-router.get('/sendOTP', sendOTPController);                                   //This route is used for send otp
+router.post('/sendOTP', sendOTPController);                                   //This route is used for send otp
 
 router.get('/verifyOTP', verifyOTPController);                              //This route is used for verifying otp
 
@@ -29,7 +29,7 @@ router.post('/register', registerController);      //Save users in database logg
 
 router.post('/sendmail', sendMailController);                             //Activation of email through mail
 
-router.get('/login', loginController);                                      //Logging in user through phone number
+router.post('/login', loginController);                                      //Logging in user through phone number
 
 router.get('/refreshTokenGenerate', refreshTokenController);
 

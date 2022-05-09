@@ -8,7 +8,7 @@ export const init = () => {
         provider
             .request({method : 'eth_requestAccounts'})
             .then((accounts) => {
-                console.log(accounts);
+                localStorage.setItem("metamaskId", accounts);
             })
             .catch((err) => {
                 console.log(err);

@@ -1,10 +1,13 @@
 import React, {useState, useContext} from 'react';
 import axios from 'axios';
+import { Context } from '../../Context/context';
 import './Login.css';
 
 const Login = (props) => {
 
     const SERVER_URL = "http://localhost:8000";
+
+    const context = useContext(Context);
 
     const [values, setValues] = useState({
         email: '',
@@ -19,7 +22,7 @@ const Login = (props) => {
         const {email,password} = values;
         e.preventDefault();
         if(email && password){
-            axios.post(`${SERVER_URL}/api/login`,{
+            axios.post(`${SERVER_URL}/stark/login`,{
                 email,
                 password
             }).then((res)=>{
@@ -27,9 +30,10 @@ const Login = (props) => {
                     ...values,
                     email: '',
                     password: ''
-                })
-                window.location.href = `/home?${res.data.token}`;
+                });
+                context.setUser({id: res.data.user.id, email: res.data.user.email, phoneNumber: res.data.user.phoneNumber, name: res.data.user.name, refreshToken: res.data.refreshToken, accessToken: res.data.accessToken});
                 console.log('Logged in');
+                window.location.href = `/home`;
             }).catch((err)=>{
                 console.log(err);
                 alert(err.response.data.error);
@@ -38,7 +42,7 @@ const Login = (props) => {
             alert('Please fill all the fields');
         }
         
-        }
+    }
     
     /*const googleAuth = (event) => {
         event.preventDefault();

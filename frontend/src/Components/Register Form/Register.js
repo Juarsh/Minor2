@@ -22,6 +22,7 @@ const Register = (props) => {
     const SERVER_URL = "http://localhost:8000";
 
     console.log(SERVER_URL);
+
     const {
         name,
         email,
@@ -120,7 +121,7 @@ const Register = (props) => {
     }
 
     const sendPhoneOTP = () => {
-        axios.get(`${SERVER_URL}/stark/sendOTP`, {
+        axios.post(`${SERVER_URL}/stark/sendOTP`, {
             phoneNumber
         });
     }

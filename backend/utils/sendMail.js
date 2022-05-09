@@ -12,10 +12,10 @@ const sendMail = (email, token) => {
     var mailOptions = {
         from: process.env.NODEMAILER_EMAIL,
         to: email,
-        subject: 'Account activation link',
+        subject: 'OTP Verification',
         html: `
-            <h1>Please Clink the link to Activate</h1>
-            <p><a href='${process.env.CLIENT_URL}/stark/activate/${token}'>Link</a></p>
+            Please find the OTP.
+            <p>${token}</p>
         `
     };
 

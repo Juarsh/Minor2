@@ -1,19 +1,39 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import CardComponent from "../../Components/Card/Card";
 import Menubar from "../../Components/Menubar/Menubar";
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const HomePage = (props) => {
 
     const navigate = useNavigate();
+
+    const [values, setValues] = useState({
+        useService2Clicked : false,
+        allGroupsWhereUserAdmin: []
+    });
 
     const useService1 = () => {
 
     }
 
     const useService2 = () => {
+        /*axios.get('' ,{
+            // get all groups where user admin
+        });*/
+        setValues({
+            ...values,
+            useService2Clicked : true
+        });
+    }
 
+    const submitDetails = () => {
+        //send log in blockchain
+        setValues({
+            ...values,
+            useService2Clicked : false
+        })
     }
 
     const manageGroups = () => {
@@ -30,6 +50,18 @@ const HomePage = (props) => {
                 </Col>
                 <Col style={{alignContent: "center"}}>
                     <CardComponent title = "Service 2" text = "You can use this service in a group" buttonText = "Use Cloud Service" showStats img = "https://singhdigitalhub.com/wp-content/uploads/2019/06/03.gif" click = {useService2}/>
+                    {values.useService2Clicked ? (
+                        <Card style={{ width: '18rem' }}>
+                            <Form.Select aria-label="Default select example">
+                                {
+                                    values.allGroupsWhereUserAdmin.map((group) => {
+                                        return (<option value={group._id}>{group.name}</option>);
+                                    })
+                                }
+                            </Form.Select>
+                            <Button onClick = {submitDetails}>Use this Service</Button>
+                        </Card>
+                    ) : (<></>)}
                 </Col>
                 <Col style={{alignContent: "center"}}>
                     <CardComponent title = "Management" text = "Make your Groups" buttonText = "Manage Groups" img = "https://cdn.dribbble.com/users/836931/screenshots/2787289/interactive_ae-2_1.gif" click = {manageGroups}/>

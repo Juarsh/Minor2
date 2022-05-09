@@ -15,9 +15,9 @@ const LoginPage = (props) => {
         <div className="containerx register">
             <div className="row">
                 <div className="col-md-3 register-left">
-                        <img src="https://cdn-icons-png.flaticon.com/512/5060/5060049.png" alt=""/>
-                        <h3>Welcome</h3>
-                        <p>Write Something About the App!</p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/5060/5060049.png" alt=""/>
+                    <h3>Welcome</h3>
+                    <p>Write Something About the App!</p>
                 </div>
                 <div className="col-md-9 register-right">
                     <Tabs defaultActiveKey="login" id="uncontrolled-tab-example" className="mb-3">

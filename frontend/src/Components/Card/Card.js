@@ -9,6 +9,8 @@ const CardComponent = (props) => {
             totalAvailable: 0,
             inUse : 0
         },
+        serviceInUse : false,
+        serviceNotAvailable : false, 
         showServiceStats : false,
     });
 
@@ -40,7 +42,11 @@ const CardComponent = (props) => {
                 <Card.Text>
                 {props.text}
                 </Card.Text>
-                <Button variant="primary" onClick = {props.click}>{props.buttonText}</Button>
+                {
+                    values.serviceInUse || values.serviceNotAvailable ? 
+                    (<Button variant="primary" disabled onClick = {props.click}>{props.buttonText}</Button>) : 
+                    (<Button variant="primary" onClick = {props.click}>{props.buttonText}</Button>)
+                }
                 {props.showStats ? (<Button variant="primary" style = {{marginLeft: "10px"}} onClick = {showStatistics}>Statistics</Button>) : (<></>)}
                 {values.showServiceStats ? (<div>ABC</div>) : (<></>)}
             </Card.Body>

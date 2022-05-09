@@ -15,6 +15,8 @@ const MakeGroupsPage = (props) => {
         window.location.pathname = "/";
     }*/
 
+    let SERVER_URL = "http://localhost:8000";
+
     useEffect(() => {
         init();
     }, []);
@@ -103,7 +105,7 @@ const MakeGroupsPage = (props) => {
             alert("Member List cannot be empty");
         } else {
             const {group} = values;
-            axios.post(`http://localhost:5000/api/voting`,{
+            axios.post(`${SERVER_URL}/stark/setGroup`,{
                    group
                 }).then((res)=>{
                     setValues({
@@ -124,10 +126,6 @@ const MakeGroupsPage = (props) => {
             console.log(values);
         }
     }
-
-    let val = 0;
-    let today = new Date();
-    let dt = today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0') + "T" + today.getHours() + ":" + today.getMinutes();
 
     return (
         <>

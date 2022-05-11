@@ -1,22 +1,21 @@
 const { groupModel } = require("../models");
 
-const deleteGroupController = () => {
-    const { groupID , deletedByEmail } = req.body;
-    groupModel.findByID(groupID).then((ans) => {
+const deleteGroupController = (req, res) => {
+    const { groupId , deletedBy } = req.query;
+    groupModel.findById(groupId).then((ans) => {
         if(ans) {
             ans.deleted = true;
-            ans.deletedBy = deletedByEmail;
+            ans.deletedBy = deletedBy;
             ans.save().then(()=>{
                 return res.send({
                     deleted: true
                 })
             });
-            
-        }
-        else
+        } else {
             res.send({
                 deleted: false,
-            })
+            });
+        }
     }).catch((err) => {
         console.log(err);
         res.send({

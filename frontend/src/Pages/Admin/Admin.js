@@ -26,24 +26,25 @@ const AdminPage = () => {
 
     useEffect(() => {
         axios.get(`${constants.SERVER_URL}/stark/getallgroup`,{
-                params: {
-                    adminEmail: email
-                }
-            }).then((res)=>{
-                console.log(res);
-                if(res.data.found) {
-                    setValues({
-                        ...values,
-                        groupList: res.data.Object,
-                        current: res.data.Object[0]
-                    });
-                } else {
-                    alert('Some Error Occurred');
-                }
-            }).catch((err)=>{
-                alert(err);
-            });            
-            console.log(values);
+            params: {
+                adminEmail: email
+            }
+        }).then((res)=>{
+            const nonDeletedGroups = res.data.Object.filter((group) => {
+                return !group.deleted;
+            });
+            if(res.data.found) {
+                setValues({
+                    ...values,
+                    groupList: nonDeletedGroups,
+                    current: nonDeletedGroups.length === 0? null : nonDeletedGroups[0]
+                });
+            } else {
+                alert('Some Error Occurred');
+            }
+        }).catch((err)=>{
+            alert(err);
+        });
     }, []);
 
     
@@ -87,4 +88,4 @@ const AdminPage = () => {
     );
 }
 
-export default ManageGroupsPage;
+export default AdminPage;

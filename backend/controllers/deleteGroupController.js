@@ -25,4 +25,4 @@ const deleteGroupController = () => {
     })
 }
 
-moodule.exports = deleteGroupController;
+module.exports = deleteGroupController;

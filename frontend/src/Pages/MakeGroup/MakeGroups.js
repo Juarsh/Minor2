@@ -104,7 +104,7 @@ const MakeGroupsPage = (props) => {
             alert("Member List cannot be empty");
         } else {
             const {group} = values;
-            axios.post(`${constans.SERVER_URL}/stark/setgroup`,{
+            axios.post(`${constants.SERVER_URL}/stark/setgroup`,{
                    group
                 }).then((res)=>{
                     console.log(res);

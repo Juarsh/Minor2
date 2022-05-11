@@ -11,7 +11,8 @@ import Web3 from 'web3';
 const HomePage = (props) => {
 
     const navigate = useNavigate();
-
+    var serviceContract;
+    var inUseContract;
     const [values, setValues] = useState({
         useService2Clicked : false,
         allGroupsWhereUserAdmin: [],
@@ -22,18 +23,20 @@ const HomePage = (props) => {
     
     useEffect(() => {
         async function load() {
-            if(localStorage.getItem("metamaskId") === null) {
-                const web3 = new Web3(Web3.givenProvider || constants.localProvider);
+            //if(localStorage.getItem("metamaskId") === null) {
+                console.log(Web3.givenProvider);
+                var web3 = new Web3(Web3.givenProvider || constants.localProvider);
                 const accounts = await web3.eth.requestAccounts();
                 localStorage.setItem("metamaskId", accounts[0]);
-            }
-            const serviceContract = new Web3().eth.Contract(constants.SERVICE_CONTRACT_ABI, constants.SERVICE_CONTRACT_ADDRESS);
-            const inUseContract = new Web3().eth.Contract(constants.IN_USE_CONTRACT_ABI, constants.IN_USE_CONTRACT_ADDRESS);
+            //}
+             serviceContract = new web3.eth.Contract(constants.SERVICE_CONTRACT_ABI, constants.SERVICE_CONTRACT_ADDRESS);
+             inUseContract = new web3.eth.Contract(constants.IN_USE_CONTRACT_ABI, constants.IN_USE_CONTRACT_ADDRESS);
             setValues({
                 ...values, 
                 serviceContract: serviceContract,
                 inUseContract: inUseContract
             });
+            console.log(serviceContract);
         }
         load();
         if(!values.onceCalled) {
@@ -59,7 +62,8 @@ const HomePage = (props) => {
 
     const useService1 = async () => {
         //blockchain
-        const sendDataOfUse = await values.serviceContract.methods.addService1.send({
+        console.log(serviceContract);
+        const sendDataOfUse = await serviceContract.methods.addService1.send({
             from: localStorage.getItem("metamaskId"),
             startTime: new Date(),
             userId: localStorage.getItem("id")

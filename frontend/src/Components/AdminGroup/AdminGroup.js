@@ -24,10 +24,9 @@ const AdminGroup = (props) => {
             ...values,
             showModal: true
         });
-        axios.get(`${constants.SERVER_URL}/stark/deletegroup`,{
-            params: {
-                groupId: props.group._id
-            }
+        axios.delete(`${constants.SERVER_URL}/stark/deletegroup`, {
+                groupId: props.group._id,
+                deletedBy: "ADMIN"
         }).then((res)=>{
             if(res.data.found) {
                 alert('Deleted');

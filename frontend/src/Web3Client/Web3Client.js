@@ -4,7 +4,7 @@ let selectedAccounts;
 
 export const init = () => {
     let provider = window.ethereum;
-    if(typeof provider !== 'undefned') {
+    if(typeof provider !== 'undefined') {
         provider
             .request({method : 'eth_requestAccounts'})
             .then((accounts) => {

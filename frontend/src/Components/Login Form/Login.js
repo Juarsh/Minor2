@@ -30,7 +30,7 @@ const Login = (props) => {
                     email: '',
                     password: ''
                 });
-                context.setUser({id: res.data.user.id, email: res.data.user.email, phoneNumber: res.data.user.phoneNumber, name: res.data.user.name, refreshToken: res.data.refreshToken, accessToken: res.data.accessToken});
+                context.setUser({id: res.data.user._id, email: res.data.user.email, phoneNumber: res.data.user.phoneNumber, name: res.data.user.name, refreshToken: res.data.refreshToken, accessToken: res.data.accessToken});
                 console.log('Logged in');
                 window.location.href = `/home`;
             }).catch((err)=>{

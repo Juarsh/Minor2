@@ -87,4 +87,4 @@ const AdminPage = () => {
     );
 }
 
-export default ManageGroupsPage;
+export default AdminPage;

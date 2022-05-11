@@ -5,10 +5,8 @@ import Menubar from "../../Components/Menubar/Menubar";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { isExpired, decodeToken } from "react-jwt";
-import { init } from '../../Web3Client/Web3Client';
-import Service1 from "../../Service1";
 import constants from "../../config";
-//import Service2 from "../../Service2";
+import Web3 from 'web3';
 
 const HomePage = (props) => {
 
@@ -16,26 +14,48 @@ const HomePage = (props) => {
 
     const [values, setValues] = useState({
         useService2Clicked : false,
-        allGroupsWhereUserAdmin: []
+        allGroupsWhereUserAdmin: [],
+        onceCalled: false
     });
-
+    
     useEffect(() => {
-        if(localStorage.getItem("metamaskId") === null) {
-            //init();
+        async function load() {
+            if(localStorage.getItem("metamaskId") === null) {
+                const web3 = new Web3(Web3.givenProvider || constants.localProvider);
+                const accounts = await web3.eth.requestAccounts();
+                localStorage.setItem("metamaskId", accounts[0]);
+            }
+        }
+        load();
+        if(!values.onceCalled) {
+            axios.get(`${constants.SERVER_URL}/stark/getgroup`,{
+                params: {
+                    adminEmail: localStorage.getItem("email")
+                }
+            }).then((res)=>{
+                if(res.data.found) {
+                    setValues({
+                        ...values,
+                        allGroupsWhereUserAdmin: res.data.Object,
+                        onceCalled: true
+                    });
+                } else {
+                    alert('Some Error Occurred');
+                }
+            }).catch((err)=>{
+                alert(err);
+            });
         }
     }, []);
 
     const useService1 = () => {
-
+        //blockchain
     }
 
     const useService2 = () => {
-        axios.get(`${constants.SERVER_URL}/` ,{
-            // get all groups where user admin
-        });
         setValues({
             ...values,
-            useService2Clicked : true
+            useService2Clicked : !values.useService2Clicked
         });
     }
 

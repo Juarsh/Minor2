@@ -24,19 +24,20 @@ const AdminGroup = (props) => {
             ...values,
             showModal: true
         });
-        axios.delete(`${constants.SERVER_URL}/stark/deletegroup`, {
+        axios.delete(`${constants.SERVER_URL}/stark/deletegroup`,{
+            params: {
                 groupId: props.group._id,
-                deletedBy: "ADMIN"
+                deletedBy: localStorage.getItem("email")
+            }
         }).then((res)=>{
-            if(res.data.found) {
-                alert('Deleted');
-                window.location.href = "/manange-groups";
+            if(res.data.deleted) {
+                window.location.href = "/admin";
             } else {
                 alert('Some Error Occurred');
             }
         }).catch((err)=>{
             alert(err);
-        });            
+        });                    
     }
 
     const groupDeleted = (event) => {

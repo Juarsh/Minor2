@@ -31,12 +31,14 @@ const ManageGroupsPage = () => {
                     adminEmail: email
                 }
             }).then((res)=>{
-                console.log(res);
+                const nonDeletedGroups = res.data.Object.filter((group) => {
+                    return !group.deleted;
+                });
                 if(res.data.found) {
                     setValues({
                         ...values,
-                        groupList: res.data.Object,
-                        current: res.data.Object[0]
+                        groupList: nonDeletedGroups,
+                        current: nonDeletedGroups.length === 0? null : nonDeletedGroups[0]
                     });
                 } else {
                     alert('Some Error Occurred');
@@ -44,7 +46,6 @@ const ManageGroupsPage = () => {
             }).catch((err)=>{
                 alert(err);
             });            
-            console.log(values);
     }, []);
 
     

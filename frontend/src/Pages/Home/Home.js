@@ -15,7 +15,9 @@ const HomePage = (props) => {
     const [values, setValues] = useState({
         useService2Clicked : false,
         allGroupsWhereUserAdmin: [],
-        onceCalled: false
+        onceCalled: false,
+        serviceContract : null,
+        inUseContract: null
     });
     
     useEffect(() => {
@@ -25,6 +27,13 @@ const HomePage = (props) => {
                 const accounts = await web3.eth.requestAccounts();
                 localStorage.setItem("metamaskId", accounts[0]);
             }
+            const serviceContract = new Web3().eth.Contract(constants.SERVICE_CONTRACT_ABI, constants.SERVICE_CONTRACT_ADDRESS);
+            const inUseContract = new Web3().eth.Contract(constants.IN_USE_CONTRACT_ABI, constants.IN_USE_CONTRACT_ADDRESS);
+            setValues({
+                ...values, 
+                serviceContract: serviceContract,
+                inUseContract: inUseContract
+            });
         }
         load();
         if(!values.onceCalled) {
@@ -48,8 +57,16 @@ const HomePage = (props) => {
         }
     }, []);
 
-    const useService1 = () => {
+    const useService1 = async () => {
         //blockchain
+        const sendDataOfUse = await values.serviceContract.methods.addService1.send({
+            from: localStorage.getItem("metamaskId"),
+            startTime: new Date(),
+            userId: localStorage.getItem("id")
+        })
+        .on('receipt', (receipt) => {
+            console.log(receipt);
+        });
     }
 
     const useService2 = () => {

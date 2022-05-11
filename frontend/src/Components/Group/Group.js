@@ -25,12 +25,13 @@ const Group = (props) => {
             showModal: true
         });
         axios.delete(`${constants.SERVER_URL}/stark/deletegroup`,{
-            groupId: props.group._id,
-            deletedBy: localStorage.getItem("email")
+            params: {
+                groupId: props.group._id,
+                deletedBy: localStorage.getItem("email")
+            }
         }).then((res)=>{
-            if(res.data.found) {
-                alert('Deleted');
-                window.location.href = "/manange-groups";
+            if(res.data.deleted) {
+                window.location.href = "/manage-groups";
             } else {
                 alert('Some Error Occurred');
             }

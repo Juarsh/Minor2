@@ -17,6 +17,13 @@ const groupSchema = mongoose.Schema({
     memberEmails: {
         type: [String],
     },
+    deleted: {
+        type: Boolean,
+        default: false
+    },
+    deletedBy: {
+        type: String,
+    }
 }, { timestamps: true });
 
 

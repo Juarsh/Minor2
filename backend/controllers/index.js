@@ -5,6 +5,7 @@ const verifyOTPController = require('./verifyOTPController')
 const loginController = require('./loginController')
 const refreshTokenController = require('./refreshTokenController')
 const setGroupController = require('./setGroupController');
+const deleteGroupController = require('./deleteGroupController.js');
 const getGroupController = require('./getGroupController');
 
 module.exports = {
@@ -16,4 +17,5 @@ module.exports = {
     refreshTokenController,
     setGroupController,
     getGroupController,
+    deleteGroupController
 }

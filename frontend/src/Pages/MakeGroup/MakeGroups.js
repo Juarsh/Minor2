@@ -5,28 +5,27 @@ import axios from 'axios';
 import { Context } from '../../Context/context';
 import CustomModal from '../../Modal/Modal';
 import Menubar from '../../Components/Menubar/Menubar';
+import constants from '../../config';
 import { init } from '../../Web3Client/Web3Client';
 
 
 const MakeGroupsPage = (props) => {
     const context = useContext(Context);
     
-    /*if(localStorage.getItem("email") === null) {
+    if(localStorage.getItem("email") === null) {
         window.location.pathname = "/";
-    }*/
+    }
 
-    let SERVER_URL = "http://localhost:8000";
-
-    useEffect(() => {
+    if(localStorage.getItem("metamaskId") === null) {
         init();
-    }, []);
+    }
 
     const [values, setValues] = useState({
         position: 1,
         group: {
             name: '',
             desc: '',
-            invites: [],
+            memberEmails: [],
             adminEmail: localStorage.getItem("email")
         },
         showModal: false
@@ -86,10 +85,10 @@ const MakeGroupsPage = (props) => {
             let arr = reader.result.split("\r\n");
             let email = [];
             let temp = values.group;
-            for(let i = 1; i < Object.keys(arr).length - 1; i++) {
+            for(let i = 0; i < Object.keys(arr).length - 1; i++) {
                 email.push(arr[i]);
             }
-            temp.invites = email;
+            temp.memberEmails = email;
             setValues({
                 ...values,
                 group: temp,
@@ -101,20 +100,21 @@ const MakeGroupsPage = (props) => {
 
     const submitForm = (event) => {
         event.preventDefault();
-        if(Object.keys(values.group.invites).length === 0) {
+        if(Object.keys(values.group.memberEmails).length === 0) {
             alert("Member List cannot be empty");
         } else {
             const {group} = values;
-            axios.post(`${SERVER_URL}/stark/setGroup`,{
+            axios.post(`${constans.SERVER_URL}/stark/setgroup`,{
                    group
                 }).then((res)=>{
+                    console.log(res);
                     setValues({
                         ...values,
                         position: 1,
                         group: {
                             name: '',
                             desc: '',
-                            invites: [],
+                            memberEmails: [],
                             adminEmail: localStorage.getItem("email")
                         }
                     }); 
@@ -156,8 +156,10 @@ const MakeGroupsPage = (props) => {
                                         <h5 className="card-title text-center mb-5 fw-light fs-5"><b>Confirm Details</b></h5>
                                         <Card style={{ width: '100%', marginBottom: '20px' }}>
                                             <Card.Body>
-                                                <Card.Title>Name : {values.group.name}</Card.Title>
-                                                
+                                                <Card.Title>Name : {values.group.name}</Card.Title> 
+                                            </Card.Body>
+                                            <Card.Body>
+                                                <Card.Title>Description : {values.group.desc}</Card.Title> 
                                             </Card.Body>
                                         </Card>
                                         

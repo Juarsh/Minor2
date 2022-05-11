@@ -4,7 +4,7 @@ import CustomModal from '../../Modal/Modal';
 import axios from 'axios';
 import constants from '../../config';
 
-const Group = (props) => {
+const AdminGroup = (props) => {
     const [values, setValues] = useState({
         confirm: false,
         showModal: false
@@ -66,7 +66,7 @@ const Group = (props) => {
                         <Button variant="danger" style = {{marginRight: '20px'}} onClick = {groupDeletedFinalNo}>✕</Button>
                     </>):(
                         <div>
-                            <Button variant="success" disabled={!props.isAdmin} onClick = {groupDeleted}>DELETE</Button>
+                            <Button variant="success" onClick = {groupDeleted}>DELETE</Button>
                         </div>
                     )}
             </Card.Body>
@@ -74,4 +74,4 @@ const Group = (props) => {
     );
 }
 
-export default Group;
+export default AdminGroup;

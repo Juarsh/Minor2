@@ -2,10 +2,9 @@ import React, {useState, useContext} from 'react';
 import axios from 'axios';
 import { Context } from '../../Context/context';
 import './Login.css';
+import constants from '../../config';
 
 const Login = (props) => {
-
-    const SERVER_URL = "http://localhost:8000";
 
     const context = useContext(Context);
 
@@ -22,7 +21,7 @@ const Login = (props) => {
         const {email,password} = values;
         e.preventDefault();
         if(email && password){
-            axios.post(`${SERVER_URL}/stark/login`,{
+            axios.post(`${constants.SERVER_URL}/stark/login`,{
                 email,
                 password
             }).then((res)=>{

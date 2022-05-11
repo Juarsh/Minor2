@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { isExpired, decodeToken } from "react-jwt";
 import { init } from '../../Web3Client/Web3Client';
+import Service1 from "../../Service1";
+import constants from "../../config";
+//import Service2 from "../../Service2";
 
 const HomePage = (props) => {
 
@@ -17,22 +20,8 @@ const HomePage = (props) => {
     });
 
     useEffect(() => {
-        let s = window.location.href;
-        if(s.indexOf("?") !== -1) {
-            const token = s.split("?")[1];
-            const decoded = decodeToken(token.substring(0, token.length - 1));
-            console.log("decoded", decoded);
-            //set user
-            if(localStorage.getItem("email") === null && isExpired(token.substring(0, token.length - 1))) {
-                window.location.pathname = "/";
-            }
-        } else {
-            if(localStorage.getItem("email") === null) {
-                window.location.pathname = "/";
-            }
-        }
         if(localStorage.getItem("metamaskId") === null) {
-            init();
+            //init();
         }
     }, []);
 
@@ -41,9 +30,9 @@ const HomePage = (props) => {
     }
 
     const useService2 = () => {
-        /*axios.get('' ,{
+        axios.get(`${constants.SERVER_URL}/` ,{
             // get all groups where user admin
-        });*/
+        });
         setValues({
             ...values,
             useService2Clicked : true

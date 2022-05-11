@@ -1,8 +1,8 @@
 const { groupModel } = require("../models");
 
 const setGroupController = (req,res) => {
-    const { adminEmail, memberEmails } = req.body;
-    const group = new groupModel({adminEmail, memberEmails});
+    const { name, desc, adminEmail, memberEmails } = req.body.group;
+    const group = new groupModel({name, desc, adminEmail, memberEmails});
     group.save((error, obj) => {
         if (error) {
             return res.send({

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const passport = require('passport')
-const { sendOTPController, registerController,setGroupController, sendMailController, verifyOTPController, loginController, refreshTokenController, } = require('../controllers')
+const { sendOTPController, registerController,setGroupController, sendMailController, verifyOTPController, loginController, refreshTokenController, getGroupController } = require('../controllers')
 const { tokenGenerate } = require('../utils');
 const { verifyToken } = require('../middlewares');
 
@@ -34,5 +34,7 @@ router.post('/login', loginController);                                      //L
 router.get('/refreshTokenGenerate', refreshTokenController);
 
 router.post('/setgroup', setGroupController);
+
+router.get('/getgroup', getGroupController);
 
 module.exports = router;

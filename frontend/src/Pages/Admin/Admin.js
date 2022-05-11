@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { ListGroup, Tab, Row, Col, Card } from "react-bootstrap";
-import Group from "../../Components/Group/Group";
+import AdminGroup from "../../Components/AdminGroup/AdminGroup";
 import Menubar from "../../Components/Menubar/Menubar";
 import constants from "../../config";
 
-const ManageGroupsPage = () => {
+const AdminPage = () => {
     const [values, setValues] = useState({
         groupList: [],
         current: ''
     });
-
 
     if(localStorage.getItem("email") === null) {
         window.location.pathname = "/";
@@ -26,7 +25,7 @@ const ManageGroupsPage = () => {
     }
 
     useEffect(() => {
-        axios.get(`${constants.SERVER_URL}/stark/getgroup`,{
+        axios.get(`${constants.SERVER_URL}/stark/getallgroup`,{
                 params: {
                     adminEmail: email
                 }
@@ -71,7 +70,7 @@ const ManageGroupsPage = () => {
                 </Col>
                 <Col sm={8}>
                 <Tab.Content>
-                    {Object.keys(values.groupList).length !== 0 ? <Group isAdmin = {email === values.current.adminEmail} group = {values.current}/> : (
+                    {Object.keys(values.groupList).length !== 0 ? <AdminGroup group = {values.current}/> : (
                         <Tab.Pane key = "none" eventKey="#none">
                             <Card style={{ width: '100%', backgroundColor: "white" }} >
                                 <Card.Body style = {{display: 'flex', width: '100%'}}>

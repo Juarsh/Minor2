@@ -4,6 +4,7 @@ import './Register.css';
 import CustomModal from '../../Modal/Modal';
 import jQuery from 'jquery';
 import { Button } from 'react-bootstrap';
+import constants from '../../config';
 
 
 const Register = (props) => {
@@ -18,10 +19,8 @@ const Register = (props) => {
         }, 
         showModal:false
     });
-
-    const SERVER_URL = "http://localhost:8000";
-
-    console.log(SERVER_URL);
+    
+    console.log(constants.SERVER_URL);
 
     const {
         name,
@@ -73,7 +72,7 @@ const Register = (props) => {
             }
             
             if(cnt === 1) {
-                axios.post(`${SERVER_URL}/stark/register`,{
+                axios.post(`${constants.SERVER_URL}/stark/register`,{
                     name,
                     email,
                     password,
@@ -115,25 +114,25 @@ const Register = (props) => {
     }
 
     const sendEmailOTP = () => {
-        axios.post(`${SERVER_URL}/stark/sendmail`, {
+        axios.post(`${constants.SERVER_URL}/stark/sendmail`, {
             email
         });
     }
 
     const sendPhoneOTP = () => {
-        axios.post(`${SERVER_URL}/stark/sendOTP`, {
+        axios.post(`${constants.SERVER_URL}/stark/sendOTP`, {
             phoneNumber
         });
     }
 
     const verifyOTP = () => {
         let verified = true;
-        axios.get(`${SERVER_URL}/stark/verifyOTP`, {
+        axios.get(`${constants.SERVER_URL}/stark/verifyOTP`, {
             otpPhone
         }).then((res) =>{
             verified = verified && res.verified
         });
-        axios.get(`${SERVER_URL}/stark/verifyOTP`, {
+        axios.get(`${constants.SERVER_URL}/stark/verifyOTP`, {
            otpEmail 
         }).then((res) =>{
             verified = verified && res.verified

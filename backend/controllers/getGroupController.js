@@ -1,9 +1,10 @@
 const { groupModel } = require("../models");
 
 const getGroupController = (req,res) => {
-    const { adminEmail } = req.body;
-    groupModel.findOne(adminEmail).then((ans) => {
-        if (ans) {
+    const { adminEmail } = req.params;
+    groupModel.find(adminEmail).then((ans) => {
+        console.log(ans);
+        if(ans) {
             return res.send({
                 Object: ans,
                 found: true
